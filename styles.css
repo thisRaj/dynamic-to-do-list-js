@@ -1,68 +1,114 @@
+/* Basic styling for the body to center the application */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', Arial, sans-serif; /* Using Inter for a modern look */
     background-color: #f0f0f0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* Use min-height to ensure it takes full height but can expand */
     margin: 0;
+    padding: 20px; /* Add some padding for smaller screens */
+    box-sizing: border-box; /* Include padding in element's total width and height */
 }
 
+/* Styles for the main To-Do application container */
 #todo-app {
-    width: 100%;
-    max-width: 400px;
+    width: 100%; /* Make it fluid */
+    max-width: 400px; /* Max width for larger screens */
     background: #fff;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Softer shadow */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spacing between elements */
 }
 
-#task-input {
-    width: 100%;
-    padding: 10px;
+h1 {
+    text-align: center;
+    color: #333;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
 }
 
+/* Styles for the task input field */
+#task-input {
+    width: 100%; /* Full width */
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Rounded corners */
+    font-size: 16px;
+    box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+#task-input::placeholder {
+    color: #999;
+}
+
+/* Styles for the "Add Task" button */
 #add-task-btn {
-    width: 100%;
-    padding: 10px;
+    width: 100%; /* Full width */
+    padding: 12px;
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px; /* Rounded corners */
     cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.3); /* Button shadow */
 }
 
 #add-task-btn:hover {
     background-color: #0056b3;
+    transform: translateY(-2px); /* Slight lift on hover */
 }
 
+#add-task-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0, 123, 255, 0.3);
+}
+
+/* Styles for the unordered list of tasks */
 ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
+/* Styles for individual list items (tasks) */
 li {
-    background-color: #eeeeee;
-    margin-top: 8px;
-    padding: 10px;
-    border-radius: 4px;
+    background-color: #f9f9f9; /* Lighter background for tasks */
+    margin-top: 10px; /* More margin between items */
+    padding: 12px 15px;
+    border-radius: 8px; /* Rounded corners */
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 16px;
+    color: #444;
+    border: 1px solid #eee; /* Subtle border */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08); /* Small shadow for depth */
 }
 
+/* Styles for the "Remove" button within each task item */
 .remove-btn {
     cursor: pointer;
-    background-color: #ff6347;
+    background-color: #dc3545; /* Red color for remove button */
     color: white;
     border: none;
-    border-radius: 4px;
-    padding: 5px 10px;
+    border-radius: 6px; /* Slightly more rounded */
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .remove-btn:hover {
-    background-color: #d9534f;
+    background-color: #c82333;
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.remove-btn:active {
+    transform: scale(1);
 }
