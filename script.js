@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const removeButton = document.createElement('button');
         // Set the text content of the remove button
         removeButton.textContent = "Remove";
-        // Add a class name to the remove button for styling
-        removeButton.className = 'remove-btn';
+        // Add a class name to the remove button for styling using classList.add
+        removeButton.classList.add('remove-btn'); // Corrected: Using classList.add
 
         // Attach an 'onclick' event listener to the remove button
         // When clicked, it will remove its parent element (the <li>) from the task list
